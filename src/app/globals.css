@@ -25,3 +25,38 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* TODO-1: Find a way to apply these directly to the library */
+
+#reviews-swiper .swiper-pagination {
+    text-align: start;
+}
+
+
+#reviews-swiper .swiper-pagination-bullet-active {
+    background-color: #171314;
+}
+
+/* END TODO-1 */
+
