@@ -53,6 +53,7 @@ export default function ServicesSection() {
                                 title='OIL CHANGES'
                                 description='Vehicle Maintenance is extremely important and the easiest thing a vehicle owner can do is get the oil changed.'
                                 topDown={true}
+                                image='https://images.pexels.com/photos/1637859/pexels-photo-1637859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -60,6 +61,7 @@ export default function ServicesSection() {
                                 title='OIL CHANGES'
                                 description='Vehicle Maintenance is extremely important and the easiest thing a vehicle owner can do is get the oil changed.'
                                 topDown={true}
+                                image='https://images.pexels.com/photos/1637859/pexels-photo-1637859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -67,6 +69,7 @@ export default function ServicesSection() {
                                 title='OIL CHANGES'
                                 description='Vehicle Maintenance is extremely important and the easiest thing a vehicle owner can do is get the oil changed.'
                                 topDown={true}
+                                image='https://images.pexels.com/photos/1637859/pexels-photo-1637859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                             />
                         </SwiperSlide>
                 </Swiper>
