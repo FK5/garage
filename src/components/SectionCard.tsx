@@ -9,7 +9,7 @@ interface SectionCardProps {
 }
 
 // export default function SectionCard() {
-const SectionCard: FC<SectionCardProps> = ({title, description, topDown = true}) => {
+const SectionCard: FC<SectionCardProps> = ({title, description, topDown = true, image}) => {
 
     const lineBreak = (
         <>
