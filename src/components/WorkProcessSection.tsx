@@ -18,7 +18,7 @@ export default function WorkProcessSection() {
     ]
     return (
         <>
-            <div className='hidden sm:block bg-white pt-4 h-[45rem] pr-5 sm:pr-20'>
+            <div className='hidden sm:block bg-white pt-4 pr-5 sm:pr-20'>
                 <div className="bg-black h-[1px] m-0 p-0 border-0 border-white w-2/3"/>
                 <div className="flex h-[40rem]">
                     <div className="w-1/2 bg-[url(https://images.pexels.com/photos/9784143/pexels-photo-9784143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-cover bg-[center_bottom] bg-no-repeat" />

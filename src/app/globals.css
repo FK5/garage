@@ -60,3 +60,9 @@ body {
 
 /* END TODO-1 */
 
+.timeline .active {
+  font-weight: bold;
+  color: #f94125;
+  border-bottom: 1px dotted transparent;
+  transform: scale(1.2);
+}

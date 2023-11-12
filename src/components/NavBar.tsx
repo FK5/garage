@@ -3,29 +3,36 @@
 import { useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
+
     XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import Image from 'next/image'
+
+import { redirect } from 'next/navigation'
 
 export default function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    const navBarItems = [
-        'HOME',
-        'SERVICES',
-        'VEHICLES',
-        'ABOUT',
-        'SHOP',
-        'SPECIALS',
-        'CONTACT'
+    const homeClickHandle = () => {
+        console.log(window.location.pathname);
+        if (window.location.pathname !== '/') {
+            redirect('')
+        } else {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }
+    }
+
+    const navBarItemss  = [
+        {itemName: 'HOME', onClickHandle: homeClickHandle},
+        {itemName: 'SERVICES', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
+        {itemName: 'VEHICLES', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
+        {itemName: 'ABOUT', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
+        {itemName: 'SHOP', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
+        {itemName: 'SPECIALS', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
+        {itemName: 'CONTACT', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
     ]
+
+
 
     return (
         <>
@@ -47,8 +54,8 @@ export default function NavBar() {
                 
                 <div className='hidden sm:flex'>
                     <div className='flex space-x-4'>
-                        {navBarItems.map((item, index) => {
-                            return <a key={index} className='hover:font-bold hover:cursor-pointer'>{item}</a>
+                        {navBarItemss.map((item, index) => {
+                            return <a key={index} className='hover:font-bold hover:cursor-pointer hover:text-red-500' onClick={item.onClickHandle}>{item.itemName}</a>
                         })}
                     </div>
                 </div>
