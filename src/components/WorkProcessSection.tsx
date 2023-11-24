@@ -56,7 +56,7 @@ export default function WorkProcessSection() {
             <div className="bg-white h-[45rem] px-5 sm:px-20 sm:pr-20 block sm:hidden">
                         <p className="py-6 text-sm">WORK PROCESS</p>
                         {lineBreak}
-                        <p className="text-5xl font-bold py-6"> OUR WORK PROCESS IS FAST AND EASY</p>
+                        <p className="text-4xl font-bold py-6"> OUR WORK PROCESS IS FAST AND EASY</p>
                         {lineBreak}
 
                         {processes.map((process, index) => {

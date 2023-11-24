@@ -7,6 +7,7 @@ import ServicesSection from "@/components/ServicesSection";
 import WorkProcessSection from "@/components/WorkProcessSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import FooterSection from "@/components/FooterSection";
+import AppointmentSection from "@/components/AppointmentSection";
 
 export default function Home() {
 
@@ -19,6 +20,7 @@ export default function Home() {
       <CertificatesSection />
       <ServicesSection />
       <WorkProcessSection />
+      <AppointmentSection />
       <ReviewsSection />
       <FooterSection />
 

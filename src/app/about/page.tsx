@@ -1,177 +1,215 @@
 "use client";
-import { FC, useEffect } from "react";
+import { useState, useRef, useEffect, FC } from "react";
+import React from "react";
+
+interface TimelineProps {
+  year: string;
+}
+
+interface ItemProps {
+  year: string;
+  isLastItem?: boolean;
+}
+
+const Year: FC<TimelineProps> = ({ year }) => (
+  <li className="timeline-items my-4 px-0 text-gray-500 list-none list-inside border-b border-dotted border-gray-300 cursor-pointer transition-all duration-300 ease-out hover:text-black">
+    <span>{year}</span>
+  </li>
+);
+
+const Item: FC<ItemProps> = ({ year, isLastItem = false }) => (
+  <div className={`milestone ${isLastItem ? "mb-[280px]" : ""}`}>
+    <h2 className="text-2xl py-4">{year}</h2>
+    <p className="text-gray-700">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+  </div>
+);
+
 const About: FC = () => {
-  let a = [
-    "1996",
-    "1997",
-    "1998",
-    "1999",
-    "2000",
-    "2001",
-    "2002",
-    "2003",
-    "2004",
-    "2005",
-  ];
+  const [stickyTop, setStickyTop] = useState(0);
+  const [scrollTarget, setScrollTarget] = useState<number | false>(false);
+  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const itemsRef = useRef<HTMLLIElement[]>([]);
+  
+
+
+  const TIMELINE_VALUES = {
+    start: 280,
+    step: 30,
+  };
+
   useEffect(() => {
-    let stickyTop: number = 0;
-    let scrollTarget: boolean | number = false;
+    const milestoness = document.querySelectorAll('.timeline__section .milestone') as NodeListOf<HTMLDivElement>;
 
-    const timeline: HTMLElement | null =
-      document.querySelector(".timeline__nav");
-    const items: NodeListOf<HTMLLIElement> =
-      document.querySelectorAll(".timeline__nav li");
-    const milestones: NodeListOf<HTMLElement> = document.querySelectorAll(
-      ".timeline__section .milestone"
-    );
-    const offsetTop: number = parseInt(
-      window.getComputedStyle(timeline as HTMLElement).top
-    );
 
-    const TIMELINE_VALUES: { start: number; step: number } = {
-      start: 190,
-      step: 30,
-    };
+    const timeline = timelineRef.current;
+    
+    const items = itemsRef.current || [];
+    const milestones = Array.from(milestoness) || [];
+    console.log(timeline);
+    
 
-    window.addEventListener("resize", () => {
+    const offsetTop = timeline
+      ? parseInt(window.getComputedStyle(timeline).top + 130 || "0")
+      : 0;
+
+      console.log(offsetTop);
+      
+
+    const handleResize = () => {
       if (timeline) {
+        console.log('b',timeline.offsetTop);
+
+        console.log('c',offsetTop);
+        
         timeline.classList.remove("fixed");
-
-        stickyTop =
-          timeline.getBoundingClientRect().top + window.scrollY - offsetTop;
-
+        setStickyTop(timeline.offsetTop - offsetTop);
         window.dispatchEvent(new Event("scroll"));
       }
-    });
+    };
 
-    window.dispatchEvent(new Event("resize"));
-
-    window.addEventListener("scroll", () => {
-      if (timeline) {
-        if (window.scrollY > stickyTop) {
-          timeline.classList.add("fixed");
-        } else {
-          timeline.classList.remove("fixed");
-        }
+    const handleScroll = () => {
+      setScrollTarget(false);
+      console.log(window.scrollY);
+      console.log('aaa', stickyTop);
+      
+      
+      if (window.scrollY > stickyTop) {
+        timeline?.classList.add("fixed");
+      } else {
+        timeline?.classList.remove("fixed");
       }
-    });
+    };
 
-    items.forEach((item: HTMLLIElement) => {
-      const span: HTMLSpanElement | null = item.querySelector("span");
+    const handleItemClick = (index: number) => () => {
+      const milestone = milestones && milestones[index];
 
-      if (span) {
-        span.addEventListener("click", () => {
-          const li: HTMLLIElement = span.parentElement as HTMLLIElement;
-          const index: number = Array.from(li.parentNode!.children).indexOf(li);
-          const milestone: HTMLElement | undefined = milestones[index];
+      if (items && !items[index]?.classList.contains("active") && milestone) {
+        setScrollTarget(index);
 
-          if (li && !li.classList.contains("active") && milestone) {
-            scrollTarget = index;
+        const scrollTargetTop = milestone.offsetTop + 60;
 
-            const scrollTargetTop: number =
-              milestone.getBoundingClientRect().top + window.scrollY - 80;
+        console.log(milestone.offsetTop);
+        
+        console.log('erst:',scrollTargetTop);
+        
 
-            window.scrollTo({
-              top: scrollTargetTop,
-              behavior: "smooth",
-            });
-
-            scrollTarget = false;
-          }
+        window.scrollTo({
+          top: scrollTargetTop,
+          behavior: "smooth",
         });
-      }
-    });
 
-    window.addEventListener("scroll", () => {
-      const viewLine: number = window.scrollY + window.innerHeight / 3;
-      let active: number = -1;
+      }
+    };
+
+    const handleScrollEvent = () => {
+      const viewLine = window.scrollY + window.innerHeight / 3 - 130;
+      // console.log(viewLine);
+      
+      let active = -1;
+
+      // console.log(scrollTarget);
 
       if (scrollTarget === false) {
-        milestones.forEach((milestone: HTMLElement, index: number) => {
-          if (
-            milestone.getBoundingClientRect().top + window.scrollY - viewLine >
-            0
-          ) {
-            return false;
+        milestones.some((milestone, index) => {
+          if (milestone.offsetTop - viewLine > 0) {
+            return true;
           }
 
           active = index;
+          return false;
         });
       } else {
         active = scrollTarget as number;
       }
 
-      if (timeline) {
-        timeline.style.top =
-          -1 * active * TIMELINE_VALUES.step + TIMELINE_VALUES.start + "px";
+      timeline?.style.setProperty(
+        "top",
+        -1 * active * TIMELINE_VALUES.step + TIMELINE_VALUES.start + "px"
+      );
 
-        items.forEach((item: HTMLLIElement) => {
-          item.classList.remove("active");
-        });
+      items.forEach((item) => item.classList.remove("active"));
 
-        items[active !== -1 ? active : 0].classList.add("active");
+      items[active !== -1 ? active : 0]?.classList.add("active");
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+    items.forEach((item, index) => {
+      const span = item.querySelector("span");
+      if (span) {
+        span.addEventListener("click", handleItemClick(index));
       }
     });
 
-    window.dispatchEvent(new Event("scroll"));
+    window.addEventListener("scroll", handleScrollEvent);
 
-    return () => {};
-  }, []);
+    handleResize(); // Initial setup
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+      items?.forEach((item, index) => {
+        const span = item.querySelector("span");
+        if (span) {
+          span.removeEventListener("click", handleItemClick(index));
+        }
+      });
+      window.removeEventListener("scroll", handleScrollEvent);
+    };
+  }, [stickyTop, scrollTarget]);
 
   return (
-    <div className="h-auto bg-white">
-      <article className="timeline relative max-w-[960px] mx-auto">
-        <nav className="timeline__nav fixed z-10 top-0 transition-top duration-300 ease-out">
-          <ul className="list-none list-inside my-4">
-            {a.map((e, index) => (
-              <li
-                key={index}
-                className="mb-4 pl-0 list-none text-[#bfc1c3] border-b border-dotted border-black-30 cursor-pointer transition-all duration-300 ease-out hover:color-black"
-              >
-                <span>{e}</span>
-              </li>
-            ))}
-            {/* <li className="mb-4 pl-0 list-none text-[#bfc1c3] border-b border-dotted border-black-30 cursor-pointer transition-all duration-300 ease-out hover:color-black">
-              <span>1993</span>
-            </li>
-            <li>
-              <span>1994</span>
-            </li>
-            <li>
-              <span>1995</span>
-            </li> */}
-            {/* <!-- Add the rest of the years --> */}
+    <div className="bg-white">
+      <article className="timeline box-border relative max-w-[980px] mx-auto text-justify">
+        <nav
+          ref={timelineRef}
+          className="timeline__nav fixed z-10 transition-top duration-300"
+        >
+          <ul
+            ref={(ref) => {
+              if (ref) {
+                itemsRef.current = Array.from(ref.children) as HTMLLIElement[];
+              }
+            }}
+            className="list-none list-inside my-[15px]"
+          >
+            <Year year="1993" />
+            <Year year="1994" />
+            <Year year="1995" />
+            <Year year="1996" />
+            <Year year="1997" />
+            <Year year="1998" />
+            <Year year="1999" />
+            <Year year="2000" />
+            <Year year="2001" />
+            {/* ... add the rest of the years */}
           </ul>
         </nav>
         <section className="timeline__section">
-          <div className="wrapper mx-auto px-[80px] lg:px-1/6 pb-16.66% w-full">
-            {a.map((e, index) => (
-              <div key={index}>
-                <h2 className="milestone">{e}</h2>
-                <p>
-                  По сути, стратегия позиционирования определяет рекламный
-                  макет. Маркетинговая активность отражает медиаплан, не
-                  считаясь с затратами. Общество потребления переворачивает
-                  ролевой поведенческий таргетинг.
-                </p>
-                <p>
-                  Рекламный блок, суммируя приведенные примеры, развивает
-                  межличностный отраслевой стандарт. Надо сказать, что бюджет на
-                  размещение изменяет из ряда вон выходящий креатив, отвоевывая
-                  рыночный сегмент. Баланс спроса и предложения интегрирована.
-                </p>
-                <p>
-                  Дело в том, что креатив ускоряет бренд. Бренд, на первый
-                  взгляд, многопланово создает имидж. Узнавание бренда, конечно,
-                  разнородно отталкивает институциональный клиентский спрос.
-                  Стимулирование сбыта, не меняя концепции, изложенной выше,
-                  спорадически уравновешивает фирменный рейтинг, повышая
-                  конкуренцию. Концепция новой стратегии оправдывает BTL.
-                </p>
-              </div>
-            ))}
-
-            {/* <!-- Add the rest of the years --> */}
+          <div className="wrapper mx-auto px-[16.66%] pb-[50px]">
+            <Item year="1993" />
+            <Item year="1994" />
+            <Item year="1995" />
+            <Item year="1996" />
+            <Item year="1997" />
+            <Item year="1998" />
+            <Item year="1999" />
+            <Item year="2000" />
+            <Item year="2001" isLastItem={true} />
+            {/* ... add the rest of the items */}
           </div>
         </section>
       </article>

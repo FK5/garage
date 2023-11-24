@@ -44,8 +44,9 @@ export default function ServicesSection() {
                 </div>
 
            </div>
-           <div className='block sm:hidden h-[70rem] bg-white flex items-center justify-center px-5 sm:px-20'>
-                <Swiper pagination={{clickable: true}} modules={[Pagination]} className="mySwiper w-[30rem]" centeredSlides={true} >
+           <div className='flex flex-col sm:hidden bg-white flex items-center justify-center py-12 px-5'>
+                <p className='text-2xl font-bold mb-4'>OUR SERVICES</p>
+                <Swiper pagination={{clickable: true}} modules={[Pagination]} className="mySwiper w-full h-[40rem]" centeredSlides={true} >
                         <SwiperSlide>
                             <ServiceCard 
                                 title='OIL CHANGES'
