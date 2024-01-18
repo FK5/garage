@@ -18,7 +18,7 @@ export default function FooterSection() {
     
     return (
         <>
-            <div className='hidden sm:flex flex-col items-center justify-center bg-stone-900  px-5 sm:px-20'>
+            <div className='hidden sm:flex flex-col items-center justify-center bg-stone-900 px-5 sm:px-20'>
                 <p className="text-white text-3xl w-1/2 text-center font-bold mt-20 mb-8">IF YOU HAVE ANY QUESTIONS, FEEL FREE TO CONTACT US</p>
                 
                 {/* <Divider color='white'/> */}
@@ -46,7 +46,7 @@ export default function FooterSection() {
                         <SiTiktok size={30} color="#FFF"/>
                     </div>
                     <div className='flex flex-col'>
-                        <p className="text-white mb-2 text-sm text-right">MON - FRI: 8:30 AM - 6:00PM</p>
+                        <p className="text-white mb-2 text-sm text-right">MON - FRI: 8:30 AM - 6:00 PM</p>
                         <p className="text-white mb-2 text-sm text-right">SAT: 8:30 AM - 2:00 PM</p>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ export default function FooterSection() {
                 <div className="flex justify-center items-center text-center w-full mt-8 mb-8">
                     <div className='flex flex-col'>
                         <p className="text-white mb-2 text-sm">OPENING HOURS:</p>
-                        <p className="text-white mb-2 text-sm text-right">MON - FRI: 8:30 AM - 6:00PM</p>
+                        <p className="text-white mb-2 text-sm text-right">MON - FRI: 8:30 AM - 6:00 PM</p>
                         <p className="text-white mb-2 text-sm text-right mb-4">SAT: 8:30 AM - 2:00 PM</p>
 
                         <p className="text-white mb-2 text-sm">NEW JNAH, 1298 ALI MOKDAD</p>

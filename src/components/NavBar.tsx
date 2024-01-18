@@ -4,35 +4,32 @@ import { useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
     Bars3Icon,
-
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 export default function NavBar() {
+    const { push } = useRouter();
+
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     const homeClickHandle = () => {
-        console.log(window.location.pathname);
-        if (window.location.pathname !== '/') {
-            redirect('')
+        if (window.location.pathname != '/') {
+            push('/');
         } else {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
         }
     }
 
     const navBarItemss  = [
-        {itemName: 'HOME', onClickHandle: homeClickHandle},
-        {itemName: 'SERVICES', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
-        {itemName: 'VEHICLES', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
+        {itemName: 'HOME', onClickHandle: ()=> { homeClickHandle() }},
         {itemName: 'ABOUT', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
+        {itemName: 'SERVICES', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
         {itemName: 'SHOP', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
         {itemName: 'SPECIALS', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
         {itemName: 'CONTACT', onClickHandle: () => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); }},
     ]
-
-
 
     return (
         <>

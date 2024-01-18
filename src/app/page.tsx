@@ -1,4 +1,4 @@
-import Image from "next/image";
+import {useRef} from 'react'
 
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -10,6 +10,8 @@ import FooterSection from "@/components/FooterSection";
 import AppointmentSection from "@/components/AppointmentSection";
 
 export default function Home() {
+
+  
 
 
   return (
