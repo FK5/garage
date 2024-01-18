@@ -20,8 +20,7 @@ const AppointmentSection: FC = () => {
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [makeModel, setMakeModel] = useState<string>("");
-  const [date, setDate] = useState<string>("");
-  const [time, setTime] = useState<string>("");
+  const [date, setDate] = useState<Date>();
   const [caseDescription, setCaseDescription] = useState<string>("");
 
   function handleChange(
