@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FC, useState, useEffect } from "react";
 
 import Divider from "./Divider";
@@ -23,6 +23,7 @@ const ServiceCard: FC<SectionCardProps> = ({
   useEffect(() => {
     setTitleDiv(
       <>
+        {!topDown? <div className='mt-4'/>:""}
         <Divider />
 
         <div className="flex py-2 sm:py-2">
@@ -38,15 +39,20 @@ const ServiceCard: FC<SectionCardProps> = ({
     );
 
     setImageDiv(
-        <div className="w-full h-[500px] relative">
-        <Image objectFit="cover" alt='' className={`my-4 h-[400px] `} fill={true} src={`/${image}`}/>
-        </div>
-
-    )
+      <div className="w-full h-[500px] relative">
+        <Image
+          objectFit="cover"
+          alt=""
+          className={`my-4 h-[400px]`}
+          fill={true}
+          src={`/${image}`}
+        />
+      </div>
+    );
 
     return () => {
-        setTitleDiv(<></>)
-        setImageDiv(<></>)
+      setTitleDiv(<></>);
+      setImageDiv(<></>);
     };
   }, []);
 
@@ -70,12 +76,12 @@ const ServiceCard: FC<SectionCardProps> = ({
   //     </>
   // )
 
-//   const imageDiv = (
-//     // <Image alt='' className={`my-4 h-[400px] w-full bg-cover bg-[center_bottom] bg-no-repeat`} width={'4000'} height={'10000'} src={`/${image}`}/>
-//     <div
-//       className={`my-4 h-[400px] w-full bg-[url(/${image})] bg-cover bg-[center_bottom] bg-no-repeat`}
-//     />
-//   );
+  //   const imageDiv = (
+  //     // <Image alt='' className={`my-4 h-[400px] w-full bg-cover bg-[center_bottom] bg-no-repeat`} width={'4000'} height={'10000'} src={`/${image}`}/>
+  //     <div
+  //       className={`my-4 h-[400px] w-full bg-[url(/${image})] bg-cover bg-[center_bottom] bg-no-repeat`}
+  //     />
+  //   );
 
   return (
     <div className="flex flex-col">

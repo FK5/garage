@@ -56,7 +56,7 @@ export default function ServicesSection() {
 
   return (
     <>
-      <div className="hidden sm:flex flex flex-col items-center bg-white pt-[8rem] px-5 sm:px-20 sm:pt-40 pb-20">
+      <div className="hidden sm:flex dark:text-black flex flex-col items-center bg-white pt-[8rem] px-5 sm:px-20 sm:pt-40 pb-20">
         <p className="text-5xl font-bold mb-4">OUR SERVICES</p>
         <p
           className="mb-16 text-center px-[1rem] sm:px-[3rem] text-2xl sm:text-xl underline font-medium hover:font-bold hover:cursor-pointer hover:text-red-500"
@@ -79,7 +79,7 @@ export default function ServicesSection() {
           )}
         </div>
       </div>
-      <div className="flex flex-col sm:hidden bg-white flex items-center justify-center py-12 px-5">
+      <div className="flex flex-col sm:hidden dark:text-black bg-white flex items-center justify-center py-12 px-5">
         <p className="text-2xl font-bold mb-4">OUR SERVICES</p>
         <Swiper
           pagination={{ clickable: true }}
@@ -87,30 +87,17 @@ export default function ServicesSection() {
           className="mySwiper w-full h-[40rem]"
           centeredSlides={true}
         >
-          <SwiperSlide>
-            <ServiceCard
-              title="OIL CHANGES"
-              description="Vehicle Maintenance is extremely important and the easiest thing a vehicle owner can do is get the oil changed."
-              topDown={true}
-              image="engine.jpg"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ServiceCard
-              title="OIL CHANGES"
-              description="Vehicle Maintenance is extremely important and the easiest thing a vehicle owner can do is get the oil changed."
-              topDown={true}
-              image="https://images.pexels.com/photos/1637859/pexels-photo-1637859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ServiceCard
-              title="OIL CHANGES"
-              description="Vehicle Maintenance is extremely important and the easiest thing a vehicle owner can do is get the oil changed."
-              topDown={true}
-              image="https://images.pexels.com/photos/1637859/pexels-photo-1637859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            />
-          </SwiperSlide>
+          {serviceCardsTexts.map((element, index) => (
+            <SwiperSlide key={index}>
+              {serviceCard(
+                element.id,
+                element.title,
+                element.description,
+                true,
+                element.image
+              )}
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </>

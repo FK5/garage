@@ -33,14 +33,9 @@ export default function ReviewsSection() {
 
         <div className="flex flex-col">
           <div className="flex text-red-500 mb-4">
-            {itemsArray.map((item, index) => (
+            {itemsArray.map((_, index) => (
               <StarIcon key={index} height="30px" />
             ))}
-
-            {/* <StarIcon height="30px"/>
-                    <StarIcon height="30px"/>
-                    <StarIcon height="30px"/>
-                    <StarIcon height="30px"/> */}
           </div>
 
           <div>
@@ -58,7 +53,7 @@ export default function ReviewsSection() {
 
   return (
     <>
-      <div className="sm:relative hidden sm:block h-[50rem] bg-white pl-20">
+      <div className="sm:relative hidden sm:block h-[50rem] dark:text-black bg-white pl-20">
         <div className="h-5/6 w-9/12 left-0 bottom-0 bg-white absolute z-10 px-5 pt-5 sm:w-1/2 sm:px-20 sm:pt-14">
           <p className="font-mono text-5xl font-bold">
             <span className="text-red-500">100%</span> APPROVED BY CUSTOMERS
@@ -71,16 +66,34 @@ export default function ReviewsSection() {
             className="mySwiper w-full"
             centeredSlides={true}
           >
-            <SwiperSlide>{reviewComp("Impressive expertise! They diagnosed and fixed my car's issue with precision. Fast, reliable service , my car runs better than ever", "Mehieddine Karouni", 5)}</SwiperSlide>
-            <SwiperSlide>{reviewComp("Exceptional work! Quick turnaround, fair pricing, and top-notch customer service. This garage is my go-to for car repairs.", "Houssam Lakkis", 5)}</SwiperSlide>
-            <SwiperSlide>{reviewComp( "Great service overall! The garage fixed my car effectively, but there was a slight delay. Friendly staff and fair pricing make it a solid choice for car repairs.", "Fouad Khalife", 4)}</SwiperSlide>
+            <SwiperSlide>
+              {reviewComp(
+                "Impressive expertise! They diagnosed and fixed my car's issue with precision. Fast, reliable service , my car runs better than ever",
+                "Mehieddine Karouni",
+                5
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {reviewComp(
+                "Exceptional work! Quick turnaround, fair pricing, and top-notch customer service. This garage is my go-to for car repairs.",
+                "Houssam Lakkis",
+                5
+              )}
+            </SwiperSlide>
+            <SwiperSlide>
+              {reviewComp(
+                "Great service overall! The garage fixed my car effectively, but there was a slight delay. Friendly staff and fair pricing make it a solid choice for car repairs.",
+                "Fouad Khalife",
+                4
+              )}
+            </SwiperSlide>
           </Swiper>
         </div>
 
-        <div className="h-full w-8/12 right-0 absolute bg-[url(https://img.freepik.com/free-photo/handsome-man-sitting-car_1303-14573.jpg?w=2000&t=st=1705591763~exp=1705592363~hmac=b3b9a939891f5cc202c91d42bd4e5fcb9763291ff291fe076321e9b072c20188)] bg-cover bg-[center_bottom_-5rem] bg-no-repeat" />
+        <div className="h-full w-8/12 right-0 absolute bg-[url(/review.jpg)] bg-cover bg-[center_bottom_-5rem] bg-no-repeat" />
       </div>
 
-      <div className="sm:hidden flex flex-col py-20 bg-white px-5">
+      <div className="sm:hidden flex flex-col py-20 dark:text-black bg-white px-5">
         <p className="font-mono text-3xl font-bold">
           <span className="text-red-500">100%</span> APPROVED BY CUSTOMERS
         </p>
@@ -91,9 +104,27 @@ export default function ReviewsSection() {
           className="mySwiper w-full"
           centeredSlides={true}
         >
-          <SwiperSlide>{reviewComp("Impressive expertise! They diagnosed and fixed my car's issue with precision. Fast, reliable service , my car runs better than ever", "Mehieddine Karouni", 5)}</SwiperSlide>
-          <SwiperSlide>{reviewComp("Exceptional work! Quick turnaround, fair pricing, and top-notch customer service. This garage is my go-to for car repairs.", "Houssam Lakkis", 5)}</SwiperSlide>
-          <SwiperSlide>{reviewComp( "Great service overall! The garage fixed my car effectively, but there was a slight delay. Friendly staff and fair pricing make it a solid choice for car repairs.", "Fouad Khalife", 4)}</SwiperSlide>
+          <SwiperSlide>
+            {reviewComp(
+              "Impressive expertise! They diagnosed and fixed my car's issue with precision. Fast, reliable service , my car runs better than ever",
+              "Mehieddine Karouni",
+              5
+            )}
+          </SwiperSlide>
+          <SwiperSlide>
+            {reviewComp(
+              "Exceptional work! Quick turnaround, fair pricing, and top-notch customer service. This garage is my go-to for car repairs.",
+              "Houssam Lakkis",
+              5
+            )}
+          </SwiperSlide>
+          <SwiperSlide>
+            {reviewComp(
+              "Great service overall! The garage fixed my car effectively, but there was a slight delay. Friendly staff and fair pricing make it a solid choice for car repairs.",
+              "Fouad Khalife",
+              4
+            )}
+          </SwiperSlide>
         </Swiper>
       </div>
     </>

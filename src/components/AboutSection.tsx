@@ -10,7 +10,7 @@ export default function AboutSection() {
 
   return (
     <>
-      <div ref={aboutSectionRef} className="flex flex-col justify-center bg-white px-5 py-20 sm:px-20 sm:py-36">
+      <div id="about-section" ref={aboutSectionRef} className="flex flex-col justify-center dark:text-black bg-white px-5 py-20 sm:px-20 sm:py-36">
         <p className="block text-center pb-8 px-[1rem] sm:px-[4rem] w-1/2 text-2xl sm:text-6xl font-bold w-full">
           WE UNDERSTAND HOW IMPORTANT IT IS TO FIND THE RIGHT AUTO SERVICE
         </p>

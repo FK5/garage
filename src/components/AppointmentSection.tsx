@@ -35,7 +35,10 @@ const AppointmentSection: FC = () => {
 
   return (
     <>
-      <div className="sm:flex flex-col bg-white px-5 sm:px-20 sm:pt-20 pb-20 hidden">
+      <div
+        id="contact-section"
+        className="sm:flex flex-col bg-white dark:text-black px-5 sm:px-20 sm:pt-20 pb-20 hidden"
+      >
         <p className="font-bold text-6xl w-1/3 mb-24">GET FREE APPOINTMENT</p>
         <div className="flex mb-20">
           <div className="w-4/12 pr-12">
@@ -175,7 +178,10 @@ const AppointmentSection: FC = () => {
           <ArrowRightIcon className="h-4 w-4 ml-4" />
         </div>
       </div>
-      <div className="sm:hidden flex flex-col bg-white px-5 sm:px-20">
+      <div
+        id="contact-section"
+        className="sm:hidden flex flex-col bg-white dark:text-black px-5 sm:px-20"
+      >
         <p className="font-bold text-4xl mb-8">GET FREE APPOINTMENT</p>
         <div className="mb-4">
           <Input
