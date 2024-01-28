@@ -23,6 +23,43 @@ const AppointmentSection: FC = () => {
   const [date, setDate] = useState<Date>();
   const [caseDescription, setCaseDescription] = useState<string>("");
 
+  const sendMessage = () => {
+    const url = "https://graph.facebook.com/v18.0/202121892991009/messages";
+    const accessToken =
+      "a"; // Replace with your actual access token
+
+    const data = {
+      messaging_product: "whatsapp",
+      to: "96171243074",
+      type: "template",
+      template: {
+        name: "hello_world",
+        language: {
+          code: "en_US",
+        },
+      },
+    };
+
+    // fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     Authorization: `Bearer ${accessToken}`,
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((response) => {
+    //     console.log("Response:", response);
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log("Data:", data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
+  };
+
   function handleChange(
     event: ChangeEvent<HTMLInputElement>,
     setFunction: Function
@@ -303,7 +340,7 @@ const AppointmentSection: FC = () => {
           />
         </div>
 
-        <div className="bg-black w-1/3 mx-auto h-6 text-white px-5 py-6 flex jsutify-center items-center hover:cursor-pointer">
+        <div onClick={sendMessage} className="bg-black w-1/3 mx-auto h-6 text-white px-5 py-6 flex jsutify-center items-center hover:cursor-pointer">
           <p className="font-bold text-sm">SEND</p>
           <ArrowRightIcon className="h-4 w-4 ml-4" />
         </div>

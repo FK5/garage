@@ -19,20 +19,18 @@ const Year: FC<TimelineProps> = ({ year }) => (
 
 const Item: FC<ItemProps> = ({ year, isLastItem = false }) => (
   <div className={`milestone ${isLastItem ? "mb-[280px]" : ""}`}>
-    <h2 className="text-2xl py-4">{year}</h2>
+    <h2 className="dark:text-black text-2xl py-4">{year}</h2>
     <p className="text-gray-700">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.
+      velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit
+      amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat nulla pariatur.
     </p>
   </div>
 );
@@ -42,8 +40,6 @@ const About: FC = () => {
   const [scrollTarget, setScrollTarget] = useState<number | false>(false);
   const timelineRef = useRef<HTMLDivElement | null>(null);
   const itemsRef = useRef<HTMLLIElement[]>([]);
-  
-
 
   const TIMELINE_VALUES = {
     start: 280,
@@ -51,29 +47,28 @@ const About: FC = () => {
   };
 
   useEffect(() => {
-    const milestoness = document.querySelectorAll('.timeline__section .milestone') as NodeListOf<HTMLDivElement>;
-
+    const milestoness = document.querySelectorAll(
+      ".timeline__section .milestone"
+    ) as NodeListOf<HTMLDivElement>;
 
     const timeline = timelineRef.current;
-    
+
     const items = itemsRef.current || [];
     const milestones = Array.from(milestoness) || [];
     console.log(timeline);
-    
 
     const offsetTop = timeline
       ? parseInt(window.getComputedStyle(timeline).top + 130 || "0")
       : 0;
 
-      console.log(offsetTop);
-      
+    console.log(offsetTop);
 
     const handleResize = () => {
       if (timeline) {
-        console.log('b',timeline.offsetTop);
+        console.log("b", timeline.offsetTop);
 
-        console.log('c',offsetTop);
-        
+        console.log("c", offsetTop);
+
         timeline.classList.remove("fixed");
         setStickyTop(timeline.offsetTop - offsetTop);
         window.dispatchEvent(new Event("scroll"));
@@ -83,9 +78,8 @@ const About: FC = () => {
     const handleScroll = () => {
       setScrollTarget(false);
       console.log(window.scrollY);
-      console.log('aaa', stickyTop);
-      
-      
+      console.log("aaa", stickyTop);
+
       if (window.scrollY > stickyTop) {
         timeline?.classList.add("fixed");
       } else {
@@ -102,22 +96,20 @@ const About: FC = () => {
         const scrollTargetTop = milestone.offsetTop + 60;
 
         console.log(milestone.offsetTop);
-        
-        console.log('erst:',scrollTargetTop);
-        
+
+        console.log("erst:", scrollTargetTop);
 
         window.scrollTo({
           top: scrollTargetTop,
           behavior: "smooth",
         });
-
       }
     };
 
     const handleScrollEvent = () => {
       const viewLine = window.scrollY + window.innerHeight / 3 - 130;
       // console.log(viewLine);
-      
+
       let active = -1;
 
       // console.log(scrollTarget);
@@ -172,7 +164,7 @@ const About: FC = () => {
   }, [stickyTop, scrollTarget]);
 
   return (
-    <div className="bg-white">
+    <div className="sm:pl-2 pl-8 bg-white">
       <article className="timeline box-border relative max-w-[980px] mx-auto text-justify">
         <nav
           ref={timelineRef}

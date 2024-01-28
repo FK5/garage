@@ -1,16 +1,22 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
+import { useRef } from "react";
 import { useRouter } from "next/navigation";
 
+import { motion } from "framer-motion";
+
 export default function AboutSection() {
-    const aboutSectionRef = useRef<HTMLDivElement>(null);
+  const aboutSectionRef = useRef<HTMLDivElement>(null);
 
   const { push } = useRouter();
 
   return (
     <>
-      <div id="about-section" ref={aboutSectionRef} className="flex flex-col justify-center dark:text-black bg-white px-5 py-20 sm:px-20 sm:py-36">
+      <motion.div
+        id="about-section"
+        ref={aboutSectionRef}
+        className="flex flex-col justify-center dark:text-black bg-white px-5 py-20 sm:px-20 sm:py-36"
+      >
         <p className="block text-center pb-8 px-[1rem] sm:px-[4rem] w-1/2 text-2xl sm:text-6xl font-bold w-full">
           WE UNDERSTAND HOW IMPORTANT IT IS TO FIND THE RIGHT AUTO SERVICE
         </p>
@@ -27,7 +33,7 @@ export default function AboutSection() {
         >
           MORE ABOUT US
         </p>
-      </div>
+      </motion.div>
     </>
   );
 }

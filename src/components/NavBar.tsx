@@ -56,6 +56,7 @@ export default function NavBar() {
           window.document
             .getElementById("contact-section")!
             .scrollIntoView({ behavior: "smooth" });
+          setMobileMenuOpen(false);
         }
       },
     },

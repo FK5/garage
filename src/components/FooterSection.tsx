@@ -10,10 +10,10 @@ import { redirect } from "next/navigation";
 import Divider from "./Divider";
 
 export default function FooterSection() {
-  const url =
-    "https://www.google.com/maps/place/ZEIN+BROS+FOR+MARBLE+%26+GRANITE+COMPANY/@33.8722303,35.4939265,16.22z/data=!4m6!3m5!1s0x151f178470a68ecd:0x5ff00f58b6fcb7a2!8m2!3d33.8725839!4d35.4942298!16s%2Fg%2F11gfjslhz3?entry=ttu";
-
   const redirectToMap = () => {
+    const url =
+      "https://www.google.com/maps/place/ZEIN+BROS+FOR+MARBLE+%26+GRANITE+COMPANY/@33.8722303,35.4939265,16.22z/data=!4m6!3m5!1s0x151f178470a68ecd:0x5ff00f58b6fcb7a2!8m2!3d33.8725839!4d35.4942298!16s%2Fg%2F11gfjslhz3?entry=ttu";
+
     if (typeof window !== "undefined") {
       window.open(url, "_blank");
     }
@@ -76,7 +76,7 @@ export default function FooterSection() {
               className="text-white underline text-sm cursor-pointer hover:font-bold"
               onClick={redirectToMap}
             >
-              GET DIRECTION
+              GET DIRECTIONS
             </p>
           </div>
           <div className="flex gap-6">
@@ -159,7 +159,7 @@ export default function FooterSection() {
               className="text-white mb-2 underline text-sm cursor-pointer hover:text-bold"
               onClick={redirectToMap}
             >
-              GET DIRECTION
+              GET DIRECTIONS
             </p>
           </div>
         </div>
