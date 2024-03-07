@@ -5,11 +5,14 @@ import { SiFacebook } from "react-icons/si";
 import { SiX } from "react-icons/si";
 import { SiInstagram } from "react-icons/si";
 
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import Divider from "./Divider";
 
 export default function FooterSection() {
+
+  const { push } = useRouter();
+
   const redirectToMap = () => {
     const url =
       "https://www.google.com/maps/place/ZEIN+BROS+FOR+MARBLE+%26+GRANITE+COMPANY/@33.8722303,35.4939265,16.22z/data=!4m6!3m5!1s0x151f178470a68ecd:0x5ff00f58b6fcb7a2!8m2!3d33.8725839!4d35.4942298!16s%2Fg%2F11gfjslhz3?entry=ttu";
@@ -18,6 +21,10 @@ export default function FooterSection() {
       window.open(url, "_blank");
     }
   };
+
+  const faqClickHandle = () => {
+    push('/faq')
+  }
 
   const scrollToContact = () => {
     if (typeof window !== "undefined") {
@@ -35,7 +42,7 @@ export default function FooterSection() {
       window.document
         .getElementById("reviews-section")!
         .scrollIntoView({ behavior: "smooth" });
-        window.document
+      window.document
         .getElementById("reviews-section-mobile")!
         .scrollIntoView({ behavior: "smooth" });
     }
@@ -114,7 +121,7 @@ export default function FooterSection() {
 
         <div className="flex justify-between items-center w-full my-8">
           <div className="flex gap-4 text-white">
-            <p className="text-sm cursor-pointer hover:font-bold">FAQ</p>
+            <p className="text-sm cursor-pointer hover:font-bold" onClick={faqClickHandle}>FAQ</p>
             <p
               className="text-sm cursor-pointer hover:font-bold"
               onClick={scrollToReviews}
@@ -183,7 +190,7 @@ export default function FooterSection() {
 
         <div className="flex justify-center items-center w-full my-4">
           <div className="flex gap-4 text-white">
-            <p className="text-sm">FAQ</p>
+            <p className="text-sm" onClick={faqClickHandle}>FAQ</p>
             <p className="text-sm" onClick={scrollToReviews}>
               REVIEWS
             </p>
