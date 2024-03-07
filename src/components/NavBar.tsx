@@ -12,6 +12,15 @@ export default function NavBar() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const logoClickHandle = () => {
+    if (window.location.pathname != "/") {
+      push("/");
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
+  }
+
   const homeClickHandle = () => {
     if (window.location.pathname != "/") {
       push("/");
@@ -115,7 +124,7 @@ export default function NavBar() {
   return (
     <>
       <div className="navbar select-none flex justify-between items-center dark:text-black px-5 sm:px-20 bg-white h-20 sticky top-0 z-50">
-        <div className="flex items-center gap-2">
+        <div onClick={logoClickHandle} className="flex items-center gap-2">
           <Image alt="" width={60} height={60} src={`/RR-LUCA-black.png`} />
 
           <p className="text-3xl font-bold font-mono tracking-tighter [word-spacing:-6px]">
