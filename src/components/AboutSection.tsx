@@ -22,7 +22,7 @@ export default function AboutSection() {
         </p>
         <p className="text-center pb-[3rem] px-[1rem] sm:px-[3rem] text-base sm:text-lg">
           Car repairs and maintenance can be expensive and no one wants to have
-          pay to repair damage caused by shoddy repair service. When you bring
+          pay to repair damage caused by shoddy repair services. When you bring
           your car into our auto shop, you won&apos;t have to worry because our
           staff is comprised of ASE certified technicians who are committed to
           making sure you have a safe dependable car.

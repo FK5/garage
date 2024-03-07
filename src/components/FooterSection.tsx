@@ -24,6 +24,9 @@ export default function FooterSection() {
       window.document
         .getElementById("contact-section")!
         .scrollIntoView({ behavior: "smooth" });
+      window.document
+        .getElementById("contact-section-mobile")!
+        .scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -32,7 +35,20 @@ export default function FooterSection() {
       window.document
         .getElementById("reviews-section")!
         .scrollIntoView({ behavior: "smooth" });
+        window.document
+        .getElementById("reviews-section-mobile")!
+        .scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handlePhoneNumber1Click = () => {
+    const telURI = `tel:+961 76 94 95 98`;
+    window.location.href = telURI;
+  };
+
+  const handlePhoneNumber2Click = () => {
+    const telURI = `tel:+961 70 81 36 66`;
+    window.location.href = telURI;
   };
 
   const lineBreak = (
@@ -70,7 +86,7 @@ export default function FooterSection() {
         <div className="flex justify-between items-center w-full mt-8 mb-8">
           <div className="flex flex-col">
             <p className="text-white mb-2 text-sm">
-              Kola Near Egypt Embassy{"'"}s, Beirut
+              Beirut Near Egypt Embassy{"'"}s, Beirut
             </p>
             <p
               className="text-white underline text-sm cursor-pointer hover:font-bold"
@@ -127,10 +143,10 @@ export default function FooterSection() {
         <div className="flex justify-center items-center w-full my-8">
           <PhoneIcon className="h-[3rem] text-white mr-2" />
           <div className="flex flex-col">
-            <p className="text-white text-2xl text-center font-bold mb-2">
+            <p onClick={handlePhoneNumber1Click} className="text-white text-2xl text-center font-bold mb-2">
               961 76 94 95 98
             </p>
-            <p className="text-white text-2xl text-center font-bold">
+            <p onClick={handlePhoneNumber2Click} className="text-white text-2xl text-center font-bold">
               961 70 81 36 66
             </p>
           </div>
@@ -153,7 +169,7 @@ export default function FooterSection() {
             </p>
 
             <p className="text-white mb-2 text-sm">
-              Kola Near Egypt Embassy{"'"}s, Beirut
+              Beirut Near Egypt Embassy{"'"}s, Beirut
             </p>
             <p
               className="text-white mb-2 underline text-sm cursor-pointer hover:text-bold"

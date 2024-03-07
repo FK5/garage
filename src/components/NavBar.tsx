@@ -18,47 +18,97 @@ export default function NavBar() {
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
+    setMobileMenuOpen(false);
+  };
+
+  const aboutClickHandle = () => {
+    if (window.location.pathname == "/") {
+      if (typeof window !== "undefined") {
+        window.document
+          .getElementById("about-section")!
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    } else if (window.location.pathname == "/about") {
+      setMobileMenuOpen(false);
+    } else {
+      push("/about");
+      setMobileMenuOpen(false);
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const serviceClickHandle = () => {
+    if (window.location.pathname == "/") {
+      if (typeof window !== "undefined") {
+        window.document
+          .getElementById("services-section")!
+          .scrollIntoView({ behavior: "smooth" });
+        window.document
+          .getElementById("services-section-mobile")!
+          .scrollIntoView({ behavior: "smooth" });
+        setMobileMenuOpen(false);
+      }
+    } else if (window.location.pathname == "/service") {
+      setMobileMenuOpen(false);
+    } else {
+      push("/services");
+      setMobileMenuOpen(false);
+    }
+  };
+
+  const shopClickHandle = () => {
+    push("/shop");
+    setMobileMenuOpen(false);
+  };
+
+  const contactClickHandle = () => {
+    if (window.location.pathname == "/") {
+      if (typeof window !== "undefined") {
+        window.document
+          .getElementById("contact-section")!
+          .scrollIntoView({ behavior: "smooth" });
+        window.document
+          .getElementById("contact-section-mobile")!
+          .scrollIntoView({ behavior: "smooth" });
+        setMobileMenuOpen(false);
+        setMobileMenuOpen(false);
+      }
+    } else {
+      push("/");
+      setTimeout(() => {
+        if (typeof window !== "undefined") {
+          window.document
+            .getElementById("contact-section")!
+            .scrollIntoView({ behavior: "smooth" });
+          window.document
+            .getElementById("contact-section-mobile")!
+            .scrollIntoView({ behavior: "smooth" });
+          setMobileMenuOpen(false);
+        }
+      }, 1000);
+    }
   };
 
   const navBarItems = [
     {
       itemName: "HOME",
-      onClickHandle: () => {
-        homeClickHandle();
-      },
+      onClickHandle: homeClickHandle,
     },
     {
       itemName: "ABOUT",
-      onClickHandle: () => {
-        if (typeof window !== "undefined") {
-          window.document
-            .getElementById("about-section")!
-            .scrollIntoView({ behavior: "smooth" });
-        }
-      },
+      onClickHandle: aboutClickHandle,
     },
     {
       itemName: "SERVICES",
-      onClickHandle: () => {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      },
+      onClickHandle: serviceClickHandle,
     },
     {
       itemName: "SHOP",
-      onClickHandle: () => {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      },
+      onClickHandle: shopClickHandle,
     },
     {
       itemName: "CONTACT",
-      onClickHandle: () => {
-        if (typeof window !== "undefined") {
-          window.document
-            .getElementById("contact-section")!
-            .scrollIntoView({ behavior: "smooth" });
-          setMobileMenuOpen(false);
-        }
-      },
+      onClickHandle: contactClickHandle,
     },
   ];
 

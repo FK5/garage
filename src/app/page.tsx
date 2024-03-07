@@ -6,8 +6,8 @@ import CertificatesSection from "@/components/CertificatesSection";
 import ServicesSection from "@/components/ServicesSection";
 import WorkProcessSection from "@/components/WorkProcessSection";
 import ReviewsSection from "@/components/ReviewsSection";
-import FooterSection from "@/components/FooterSection";
 import AppointmentSection from "@/components/AppointmentSection";
+import FooterSection from '@/components/FooterSection';
 
 export default function Home() {
 

@@ -216,7 +216,7 @@ const AppointmentSection: FC = () => {
         </div>
       </div>
       <div
-        id="contact-section"
+        id="contact-section-mobile"
         className="sm:hidden flex flex-col bg-white dark:text-black px-5 sm:px-20"
       >
         <p className="font-bold text-4xl mb-8">GET FREE APPOINTMENT</p>

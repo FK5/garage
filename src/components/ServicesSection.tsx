@@ -18,22 +18,22 @@ export default function ServicesSection() {
       id: "1",
       title: "ENGINES",
       description:
-        "We use state-of-the-art scan tool equipment to perform engine diagnostics and repair.",
+        "We utilize state-of-the-art scanning equipment to conduct engine diagnostics and repairs.",
       image: "engine.jpg",
     },
     {
       id: "2",
       title: "TRANSMISSIONS",
       description:
-        "We diagnose and repair all types of transmissions if repairable.",
+        "We diagnose and repair all types of transmissions, provided they are repairable.",
       image: "transmission.jpg",
     },
     {
       id: "3",
       title: "DIAGNOSTIC",
       description:
-        "Our certified technicians use the lastest diagnostic equipment to service and repair yout vehicles.",
-      image: "street-rover.jpg",
+      "Our certified technicians utilize the latest diagnostic equipment to service and repair your vehicles.",
+      image: "diagnostic.jpg",
     },
   ];
 
@@ -56,7 +56,7 @@ export default function ServicesSection() {
 
   return (
     <>
-      <div className="hidden sm:flex dark:text-black flex flex-col items-center bg-white pt-[8rem] px-5 sm:px-20 sm:pt-40 pb-20">
+      <div id="services-section" className="hidden sm:flex dark:text-black flex flex-col items-center bg-white pt-[8rem] px-5 sm:px-20 sm:pt-40 pb-20">
         <p className="text-5xl font-bold mb-4">OUR SERVICES</p>
         <p
           className="mb-16 text-center px-[1rem] sm:px-[3rem] text-2xl sm:text-xl underline font-medium hover:font-bold hover:cursor-pointer hover:text-red-500"
@@ -79,8 +79,16 @@ export default function ServicesSection() {
           )}
         </div>
       </div>
-      <div className="flex flex-col sm:hidden dark:text-black bg-white flex items-center justify-center py-12 px-5">
+      <div id="services-section-mobile" className="flex flex-col sm:hidden dark:text-black bg-white flex items-center justify-center py-12 px-5">
         <p className="text-2xl font-bold mb-4">OUR SERVICES</p>
+        <p
+          className="mb-4 text-center px-[1rem] text-md underline font-medium hover:font-bold hover:cursor-pointer hover:text-red-500"
+          onClick={() => {
+            push("/services");
+          }}
+        >
+          VIEW ALL SERVICES
+        </p>
         <Swiper
           pagination={{ clickable: true }}
           modules={[Pagination]}

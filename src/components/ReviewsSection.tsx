@@ -53,7 +53,7 @@ export default function ReviewsSection() {
 
   return (
     <>
-      <div className="sm:relative hidden sm:block h-[50rem] dark:text-black bg-white pl-20">
+      <div id="reviews-section" className="sm:relative hidden sm:block h-[50rem] dark:text-black bg-white pl-20">
         <div className="h-5/6 w-9/12 left-0 bottom-0 bg-white absolute z-10 px-5 pt-5 sm:w-1/2 sm:px-20 sm:pt-14">
           <p className="font-mono text-5xl font-bold">
             <span className="text-red-500">100%</span> APPROVED BY CUSTOMERS
@@ -93,7 +93,7 @@ export default function ReviewsSection() {
         <div className="h-full w-8/12 right-0 absolute bg-[url(/review.jpg)] bg-cover bg-[center_bottom_-5rem] bg-no-repeat" />
       </div>
 
-      <div className="sm:hidden flex flex-col py-20 dark:text-black bg-white px-5">
+      <div id="reviews-section-mobile" className="sm:hidden flex flex-col py-20 dark:text-black bg-white px-5">
         <p className="font-mono text-3xl font-bold">
           <span className="text-red-500">100%</span> APPROVED BY CUSTOMERS
         </p>

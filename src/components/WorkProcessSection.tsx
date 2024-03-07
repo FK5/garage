@@ -1,8 +1,16 @@
+'use client'
+
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import { VideoCameraIcon } from "@heroicons/react/24/outline";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { TruckIcon } from "@heroicons/react/24/outline";
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+
+import { useRouter } from "next/navigation";
+
 export default function WorkProcessSection() {
+  const { push } = useRouter();
+
   const lineBreak = (
     <>
       <div className="h-[1px]" />
@@ -20,7 +28,7 @@ export default function WorkProcessSection() {
     {
       title: "02. BRING YOUR VEHICLE",
       description: "We are car guys at heart",
-      icon: <TruckIcon height="30px" />,
+      icon:  <DirectionsCarIcon style={{ height: '30px', width: '30px'}}/>,
       isRed: false,
     },
     {
@@ -62,6 +70,11 @@ export default function WorkProcessSection() {
                         ? "text-red-500 hover:font-bold hover:cursor-pointer"
                         : ""
                     }`}
+                    onClick={() => {
+                      if (process.isRed) {
+                        push("/liveView");
+                      }
+                    }}
                   >
                     <div className="mr-4">{process.icon}</div>
                     <div className="flex flex-col">
@@ -96,6 +109,11 @@ export default function WorkProcessSection() {
                 className={`flex flex-start items-center py-6 ${
                   process.isRed ? "text-red-500" : ""
                 }`}
+                onClick={() => {
+                  if (process.isRed) {
+                    push("/liveView");
+                  }
+                }}
               >
                 <div className="mr-4">{process.icon}</div>
                 <div className="flex flex-col">

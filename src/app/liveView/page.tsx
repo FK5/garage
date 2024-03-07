@@ -1,20 +1,21 @@
 import {FC} from 'react';
 
-
 const LiveView: FC = () => {
 
-    const a = [0,0,0,0,0,0];
-    // const defaultImageURL: string = 'https://images.pexels.com/photos/1637859/pexels-photo-1637859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     return (
-        <div className='flex flex-col bg-white px-5 sm:px-20 sm:pt-20 pb-20'>
+        <div className='flex flex-col items-center justify-center bg-white py-[27rem] px-5 sm:px-20 h-[37rem]'>
 
-            <div className='flex flex-wrap gap-10'>
-                {/* { a.map((e, index) => (<div key={index}> 
+            <p className='text-red-500 font-extrabold text-5xl mb-4 text-center'> Coming Soon!</p>
+            <p className='text-black font-bold text-2xl text-center'> You will be able to see your car being worked on LIVE</p>
+
+
+            {/* <div className='flex flex-wrap gap-10'>
+                { a.map((e, index) => (<div key={index}> 
                     <a rel="nofollow" href="http://50.248.1.46:8000/" target="new" className='w-full'>
                     <img id="image0" src="http://50.248.1.46:8000/mjpg/video.mjpg" className="img-responsive img-rounded detailimage" alt="" title="Click here to enter the camera located in United States, region Florida, Банч Парк"/>
                     </a>
-                </div>)  )} */}
-            </div>
+                </div>)  )}
+            </div> */}
 
         </div>
     )
