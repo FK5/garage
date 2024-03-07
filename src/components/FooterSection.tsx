@@ -137,7 +137,7 @@ export default function FooterSection() {
           </div>
 
           <div className="flex text-white">
-            <p className="text-sm">&copy;2023 RoadRovers by Luca</p>
+            <p className="text-sm">&copy;2024 RoadRovers by Luca</p>
           </div>
         </div>
       </div>
