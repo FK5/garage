@@ -183,7 +183,7 @@ const About: FC = () => {
             {storyItems.map((e) => <Year key={e.id} year={e.year} />)}
           </ul>
         </nav>
-        <section className="timeline__section">
+        <section className="timeline__section sm:pb-20">
           <div className="wrapper mx-auto px-[16.66%] pb-[50px]">
             {storyItems.map((e, index) => <Item key={e.id} year={e.year} text={e.text} isLastItem={index == storyItems.length - 1}/>)}
           </div>

@@ -50,9 +50,8 @@ const Services: FC = () => {
     },
     {
       id: "6",
-      title: "PAINT JOBS",
-      description:
-        "We use the best products and tools to give a mirror effect to your car.",
+      title: "BODY WORKS",
+      description: "We use top-quality products and tools to make your car shine like a mirror. Plus, we handle all body work needs, including expert paint jobs.",
       imageName: "red-rover.jpg",
     },
   ];

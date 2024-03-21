@@ -31,42 +31,23 @@ export default function NavBar() {
   };
 
   const aboutClickHandle = () => {
-    if (window.location.pathname == "/") {
-      if (typeof window !== "undefined") {
-        window.document
-          .getElementById("about-section")!
-          .scrollIntoView({ behavior: "smooth" });
-      }
-    } else if (window.location.pathname == "/about") {
-      setMobileMenuOpen(false);
-    } else {
-      push("/about");
-      setMobileMenuOpen(false);
-    }
+    if (window.location.pathname !== "/push") {
+      push("/about")
+    } 
     setMobileMenuOpen(false);
   };
 
   const serviceClickHandle = () => {
-    if (window.location.pathname == "/") {
-      if (typeof window !== "undefined") {
-        window.document
-          .getElementById("services-section")!
-          .scrollIntoView({ behavior: "smooth" });
-        window.document
-          .getElementById("services-section-mobile")!
-          .scrollIntoView({ behavior: "smooth" });
-        setMobileMenuOpen(false);
-      }
-    } else if (window.location.pathname == "/service") {
-      setMobileMenuOpen(false);
-    } else {
-      push("/services");
-      setMobileMenuOpen(false);
-    }
+    if (window.location.pathname !== "/services") {
+      push("/services")
+    } 
+    setMobileMenuOpen(false);
   };
 
   const shopClickHandle = () => {
-    push("/shop");
+    if (window.location.pathname !== "/shop") {
+      push("/shop")
+    } 
     setMobileMenuOpen(false);
   };
 
@@ -79,7 +60,6 @@ export default function NavBar() {
         window.document
           .getElementById("contact-section-mobile")!
           .scrollIntoView({ behavior: "smooth" });
-        setMobileMenuOpen(false);
         setMobileMenuOpen(false);
       }
     } else {
