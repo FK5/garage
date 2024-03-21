@@ -89,7 +89,7 @@ export default function WorkProcessSection() {
         </div>
       </div>
 
-      <div className="bg-white h-[45rem] dark:text-black px-5 sm:px-20 sm:pr-20 block sm:hidden">
+      <div className="bg-white h-[45rem] dark:text-black px-5 pt-16 sm:px-20 sm:pr-20 block sm:hidden">
         <p className="py-6 text-sm">WORK PROCESS</p>
         {lineBreak}
         <p className="text-4xl font-bold py-6">

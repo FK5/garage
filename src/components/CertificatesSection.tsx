@@ -1,4 +1,5 @@
 import Divider from "./Divider";
+import Image from "next/image";
 
 export default function CertificatesSection() {
   return (
@@ -13,11 +14,21 @@ export default function CertificatesSection() {
           <Divider />
           <div className="flex justify-between mt-8">
             <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
-              <p>Cert</p>
+              <Image
+                alt="launch logo"
+                width={130}
+                height={130}
+                src={`/launch.jpg`}
+              />
             </div>
 
             <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
-              <p>Cert</p>
+              <Image
+                alt="mag1 logo"
+                width={130}
+                height={130}
+                src={`/mag1.jpg`}
+              />
             </div>
 
             <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
@@ -38,11 +49,21 @@ export default function CertificatesSection() {
         <Divider />
         <div className="flex flex-col items-center gap-8 mt-8">
           <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
-            <p>Cert</p>
+            <Image
+              alt="launch logo"
+              width={130}
+              height={130}
+              src={`/launch.jpg`}
+            />
           </div>
 
           <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
-            <p>Cert</p>
+            <Image
+              alt="mag1 logo"
+              width={130}
+              height={130}
+              src={`/mag1.jpg`}
+            />
           </div>
 
           <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
