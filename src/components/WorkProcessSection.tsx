@@ -61,7 +61,7 @@ export default function WorkProcessSection() {
 
             {processes.map((process, index) => {
               return (
-                <div >
+                <div key={index}>
                   <div
                     className={`flex flex-start items-center py-6 ${process.isRed
                         ? "text-red-500 hover:font-bold hover:cursor-pointer"
@@ -100,9 +100,8 @@ export default function WorkProcessSection() {
 
         {processes.map((process, index) => {
           return (
-            <>
+            <div key={index}>
               <div
-                key={index}
                 className={`flex flex-start items-center py-6 ${process.isRed ? "text-red-500" : ""
                   }`}
                 onClick={() => {
@@ -118,7 +117,7 @@ export default function WorkProcessSection() {
                 </div>
               </div>
               {index <= processes.length - 2 ? lineBreak : <></>}
-            </>
+            </div>
           );
         })}
       </div>
