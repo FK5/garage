@@ -26,8 +26,7 @@ const AppointmentSection: FC = () => {
     let message = `*Name*: ${name}\n*Phone*: ${phone}\n*Email*: ${email}\n*Vehicle Make and Model*: ${makeModel}\n*Date*: ${date}\n*Case Description*: ${caseDescription}
     `;
     message = encodeURIComponent(message);
-    window.open(`https://wa.me/+96171243074/?text=${message}`, "_blank");
-
+    window.open(`https://wa.me/+96170813666/?text=${message}`, "_blank");
   };
 
   function handleChange(
@@ -190,7 +189,7 @@ const AppointmentSection: FC = () => {
       </div>
       <div
         id="contact-section-mobile"
-        className="sm:hidden flex flex-col bg-white dark:text-black px-5 sm:px-20"
+        className="sm:hidden flex flex-col bg-white dark:text-black py-8 px-5 sm:px-20"
       >
         <p className="font-bold text-4xl mb-8">GET FREE APPOINTMENT</p>
         <div className="mb-4">

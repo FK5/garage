@@ -79,7 +79,7 @@ export default function ServicesSection() {
           )}
         </div>
       </div>
-      <div id="services-section-mobile" className="flex flex-col sm:hidden dark:text-black bg-white flex items-center justify-center pt-24 sm:py-12 px-5">
+      <div id="services-section-mobile" className="flex flex-col sm:hidden dark:text-black bg-white flex items-center justify-center pt-24 py-12 px-5">
         <p className="text-2xl font-bold mb-4">OUR SERVICES</p>
         <p
           className="mb-4 text-center px-[1rem] text-md underline font-medium hover:font-bold hover:cursor-pointer hover:text-red-500"
