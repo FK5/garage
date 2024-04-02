@@ -57,19 +57,13 @@ const About: FC = () => {
 
     const items = itemsRef.current || [];
     const milestones = Array.from(milestoness) || [];
-    // console.log(timeline);
 
     const offsetTop = timeline
       ? parseInt(window.getComputedStyle(timeline).top + 130 || "0")
       : 0;
 
-    // console.log(offsetTop);
-
     const handleResize = () => {
       if (timeline) {
-        // console.log("b", timeline.offsetTop);
-
-        // console.log("c", offsetTop);
 
         timeline.classList.remove("fixed");
         setStickyTop(timeline.offsetTop - offsetTop);
@@ -79,8 +73,6 @@ const About: FC = () => {
 
     const handleScroll = () => {
       setScrollTarget(false);
-      // console.log(window.scrollY);
-      // console.log("aaa", stickyTop);
 
       if (window.scrollY > stickyTop) {
         timeline?.classList.add("fixed");
@@ -95,11 +87,7 @@ const About: FC = () => {
       if (items && !items[index]?.classList.contains("active") && milestone) {
         setScrollTarget(index);
 
-        const scrollTargetTop = milestone.offsetTop + 60;
-
-        // console.log(milestone.offsetTop);
-
-        // console.log("erst:", scrollTargetTop);
+        const scrollTargetTop = milestone.offsetTop + 10;
 
         window.scrollTo({
           top: scrollTargetTop,
@@ -110,11 +98,7 @@ const About: FC = () => {
 
     const handleScrollEvent = () => {
       const viewLine = window.scrollY + window.innerHeight / 3 - 130;
-      // console.log(viewLine);
-
       let active = -1;
-
-      // console.log(scrollTarget);
 
       if (scrollTarget === false) {
         milestones.some((milestone, index) => {

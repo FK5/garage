@@ -32,22 +32,22 @@ export default function NavBar() {
 
   const aboutClickHandle = () => {
     if (window.location.pathname !== "/push") {
-      push("/about")
-    } 
+      push("/about");
+    }
     setMobileMenuOpen(false);
   };
 
   const serviceClickHandle = () => {
     if (window.location.pathname !== "/services") {
-      push("/services")
-    } 
+      push("/services");
+    }
     setMobileMenuOpen(false);
   };
 
   const shopClickHandle = () => {
     if (window.location.pathname !== "/shop") {
-      push("/shop")
-    } 
+      push("/shop");
+    }
     setMobileMenuOpen(false);
   };
 
@@ -63,18 +63,11 @@ export default function NavBar() {
         setMobileMenuOpen(false);
       }
     } else {
-      push("/");
-      setTimeout(() => {
-        if (typeof window !== "undefined") {
-          window.document
-            .getElementById("contact-section")!
-            .scrollIntoView({ behavior: "smooth" });
-          window.document
-            .getElementById("contact-section-mobile")!
-            .scrollIntoView({ behavior: "smooth" });
-          setMobileMenuOpen(false);
-        }
-      }, 1000);
+      push("/#contact-section");
+      if (mobileMenuOpen) {
+        push("/#contact-section-mobile");
+        setMobileMenuOpen(false);
+      }
     }
   };
 

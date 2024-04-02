@@ -62,7 +62,7 @@ body {
 
 .timeline .active {
   font-weight: bold;
-  color: #f94125;
+  color: #f94125 !important;
   border-bottom: 1px dotted transparent;
   transform: scale(1.2);
 }
