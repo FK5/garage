@@ -18,7 +18,7 @@ export default function CertificatesSection() {
                 alt="launch logo"
                 width={130}
                 height={130}
-                src={`/launch.jpg`}
+                src={`/launch.png`}
               />
             </div>
 
@@ -27,12 +27,17 @@ export default function CertificatesSection() {
                 alt="mag1 logo"
                 width={130}
                 height={130}
-                src={`/mag1.jpg`}
+                src={`/mag1.png`}
               />
             </div>
 
             <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
-              <p>Cert</p>
+            <Image
+              alt="rs200 logo"
+              width={100}
+              height={100}
+              src={`/rs200.png`}
+            />
             </div>
           </div>
         </div>
@@ -53,7 +58,7 @@ export default function CertificatesSection() {
               alt="launch logo"
               width={130}
               height={130}
-              src={`/launch.jpg`}
+              src={`/launch.png`}
             />
           </div>
 
@@ -62,12 +67,17 @@ export default function CertificatesSection() {
               alt="mag1 logo"
               width={130}
               height={130}
-              src={`/mag1.jpg`}
+              src={`/mag1.png`}
             />
           </div>
 
           <div className="flex items-center justify-center border-[1px] rounded-full border-black w-[150px] h-[150px]">
-            <p>Cert</p>
+          <Image
+              alt="rs200 logo"
+              width={100}
+              height={100}
+              src={`/rs200.png`}
+            />
           </div>
         </div>
       </div>
