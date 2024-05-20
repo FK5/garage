@@ -137,7 +137,7 @@ export default function FooterSection() {
           </div>
 
           <div className="flex text-white">
-            <p className="text-sm">&copy;2024 RoadRovers by Luca</p>
+            <p className="text-sm">&copy;2024 RoadRover by Luca</p>
           </div>
         </div>
       </div>
@@ -202,7 +202,7 @@ export default function FooterSection() {
 
         {lineBreak}
         <div className="flex justify-center items-center text-white my-4">
-          <p className="text-sm">&copy;2024 RoadRovers by Luca</p>
+          <p className="text-sm">&copy;2024 RoadRover by Luca</p>
         </div>
       </div>
     </>

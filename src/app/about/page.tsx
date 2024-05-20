@@ -40,7 +40,7 @@ const About: FC = () => {
     {id: 4, year: "2013" , text: 'We established our first MyCar branch in Lebanon, located in the area of Jnah. This strategic location allowed us to serve our customers efficiently and effectively, laying the groundwork for our expansion in the Lebanese market.'},
     {id: 5, year: "2017" , text: 'We proudly launched one of Lebanon\'s largest companies in Khaldeh, our second branch spanning an impressive 6500 square meters.'},
     {id: 6, year: "2019" , text: 'Regrettably, due to the economic crisis, we were compelled to cease operations of the company.'},
-    {id: 7, year: "2024" , text: 'The dawn of a new era begins with RoadRovers. We proudly announce the opening of our first branch dedicated to Land Rovers, marking the inception of a vast automotive garage chain. This venture embodies a fresh Lebanese concept in the automotive industry.'}
+    {id: 7, year: "2024" , text: 'The dawn of a new era begins with RoadRover. We proudly announce the opening of our first branch dedicated to Land Rover, marking the inception of a vast automotive garage chain. This venture embodies a fresh Lebanese concept in the automotive industry.'}
   ]
 
   const TIMELINE_VALUES = {
