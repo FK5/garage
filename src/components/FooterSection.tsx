@@ -10,12 +10,10 @@ import { useRouter } from "next/navigation";
 import Divider from "./Divider";
 
 export default function FooterSection() {
-
   const { push } = useRouter();
 
   const redirectToMap = () => {
-    const url =
-      "https://www.google.com/maps/place/ZEIN+BROS+FOR+MARBLE+%26+GRANITE+COMPANY/@33.8722303,35.4939265,16.22z/data=!4m6!3m5!1s0x151f178470a68ecd:0x5ff00f58b6fcb7a2!8m2!3d33.8725839!4d35.4942298!16s%2Fg%2F11gfjslhz3?entry=ttu";
+    const url = "https://maps.app.goo.gl/9DZGqmMCj6w1gJqN6";
 
     if (typeof window !== "undefined") {
       window.open(url, "_blank");
@@ -23,8 +21,8 @@ export default function FooterSection() {
   };
 
   const faqClickHandle = () => {
-    push('/faq')
-  }
+    push("/faq");
+  };
 
   const scrollToContact = () => {
     if (typeof window !== "undefined") {
@@ -121,7 +119,12 @@ export default function FooterSection() {
 
         <div className="flex justify-between items-center w-full my-8">
           <div className="flex gap-4 text-white">
-            <p className="text-sm cursor-pointer hover:font-bold" onClick={faqClickHandle}>FAQ</p>
+            <p
+              className="text-sm cursor-pointer hover:font-bold"
+              onClick={faqClickHandle}
+            >
+              FAQ
+            </p>
             <p
               className="text-sm cursor-pointer hover:font-bold"
               onClick={scrollToReviews}
@@ -150,10 +153,16 @@ export default function FooterSection() {
         <div className="flex justify-center items-center w-full my-8">
           <PhoneIcon className="h-[3rem] text-white mr-2" />
           <div className="flex flex-col">
-            <p onClick={handlePhoneNumber1Click} className="text-white text-2xl text-center font-bold mb-2">
+            <p
+              onClick={handlePhoneNumber1Click}
+              className="text-white text-2xl text-center font-bold mb-2"
+            >
               961 76 94 95 98
             </p>
-            <p onClick={handlePhoneNumber2Click} className="text-white text-2xl text-center font-bold">
+            <p
+              onClick={handlePhoneNumber2Click}
+              className="text-white text-2xl text-center font-bold"
+            >
               961 70 81 36 66
             </p>
           </div>
@@ -190,7 +199,9 @@ export default function FooterSection() {
 
         <div className="flex justify-center items-center w-full my-4">
           <div className="flex gap-4 text-white">
-            <p className="text-sm" onClick={faqClickHandle}>FAQ</p>
+            <p className="text-sm" onClick={faqClickHandle}>
+              FAQ
+            </p>
             <p className="text-sm" onClick={scrollToReviews}>
               REVIEWS
             </p>

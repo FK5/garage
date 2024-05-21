@@ -14,8 +14,7 @@ export default function InfoBar() {
   };
 
   const redirectToMap = () => {
-    const url =
-      "https://www.google.com/maps/place/ZEIN+BROS+FOR+MARBLE+%26+GRANITE+COMPANY/@33.8722303,35.4939265,16.22z/data=!4m6!3m5!1s0x151f178470a68ecd:0x5ff00f58b6fcb7a2!8m2!3d33.8725839!4d35.4942298!16s%2Fg%2F11gfjslhz3?entry=ttu";
+    const url = "https://maps.app.goo.gl/9DZGqmMCj6w1gJqN6";
 
     if (typeof window !== "undefined") {
       window.open(url, "_blank");
