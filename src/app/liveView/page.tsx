@@ -20,7 +20,7 @@ const LiveView: FC = () => {
           </p>
           <p className=" sm:w-2/3 text-lg sm:text-xl">
             Now you can see your car being worked on in real-time with our live
-            garage cameras. It's quick and easy to set up—just follow these
+            garage cameras. It&aposs quick and easy to set up—just follow these
             steps:
           </p>
         </div>
@@ -64,7 +64,7 @@ const LiveView: FC = () => {
             </span>
           </p>
           <p className="text-lg sm:text-xl">
-            Need help? Feel free to reach out—we're happy to assist! 🚗🔧🎥
+            Need help? Feel free to reach out—we&aposre happy to assist! 🚗🔧🎥
           </p>
         </div>
       </div>
