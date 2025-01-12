@@ -5,7 +5,11 @@ import { PhoneIcon } from "@heroicons/react/20/solid";
 import { CalendarIcon } from "@heroicons/react/24/solid";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 
-export default function InfoBar() {
+type InfoBarProps = {
+  className?: string;
+};
+
+const InfoBar: React.FC<InfoBarProps> = ({ className }) => {
   const [isLocationHover, setIsLocationHover] = useState<Boolean>(false);
 
   const handlePhoneNumberClick = () => {
@@ -23,7 +27,7 @@ export default function InfoBar() {
 
   return (
     <>
-      <div className="infobar dark:text-black bg-white sm:flex z-50 flex-row border-b-2 border-black h-14 hidden select-none">
+      <div className={`infobar ${className} dark:text-black bg-white sm:flex z-50 flex-row border-b-2 border-black h-14 hidden select-none transition-transform duration-300`}>
         <a className="w-20 border-r-2 border-black hidden sm:block"></a>
         <a className="w-1/3 text-center border-r-2 border-black flex items-center justify-center">
           <PhoneIcon className="h-4 w-4 mr-2" />
@@ -69,3 +73,5 @@ export default function InfoBar() {
     </>
   );
 }
+
+export default InfoBar;

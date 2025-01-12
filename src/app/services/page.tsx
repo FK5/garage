@@ -75,8 +75,8 @@ const Services: FC = () => {
 
   return (
     <>
-      <div className="hidden sm:flex sm:flex-col bg-white px-5 sm:px-20 sm:pt-20 pb-20 dark:text-black">
-        <div className="flex flex-wrap gap-10">
+      <div className="hidden lg:flex lg:flex-col bg-white px-5 lg:px-20 lg:pt-20 pb-20 dark:text-black">
+        <div className="flex flex-wrap gap-8">
           {serviceCardsTexts.map((element, index) =>
             serviceCard(
               element.id,
@@ -90,7 +90,7 @@ const Services: FC = () => {
       </div>
 
       <div
-        className="flex flex-col sm:hidden dark:text-black bg-white items-center justify-center py-8 px-5"
+        className="flex flex-col lg:hidden dark:text-black bg-white items-center justify-center py-8 px-5"
       >
         <p className="text-2xl font-bold mb-2">OUR SERVICES</p>
         <Swiper

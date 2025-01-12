@@ -1,5 +1,3 @@
-import {useRef} from 'react'
-
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import CertificatesSection from "@/components/CertificatesSection";

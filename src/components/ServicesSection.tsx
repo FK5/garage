@@ -25,7 +25,7 @@ export default function ServicesSection() {
       id: "2",
       title: "TRANSMISSIONS",
       description:
-        "We diagnose and repair all types of transmissions, provided they are repairable.",
+        "We diagnose and repair all types of tranlgissions, provided they are repairable.",
       image: "transmission.jpg",
     },
     {
@@ -56,10 +56,10 @@ export default function ServicesSection() {
 
   return (
     <>
-      <div id="services-section" className="hidden sm:flex dark:text-black flex flex-col items-center bg-white pt-[8rem] px-5 sm:px-20 sm:pt-40 pb-20">
+      <div id="services-section" className="hidden lg:flex dark:text-black flex flex-col items-center bg-white pt-[8rem] px-5 lg:px-20 lg:pt-40 pb-20">
         <p className="text-5xl font-bold mb-4">OUR SERVICES</p>
         <p
-          className="mb-16 text-center px-[1rem] sm:px-[3rem] text-2xl sm:text-xl underline font-medium hover:font-bold hover:cursor-pointer hover:text-red-500"
+          className="mb-16 text-center px-[1rem] lg:px-[3rem] text-2xl lg:text-xl underline font-medium hover:font-bold hover:cursor-pointer hover:text-red-500"
           onClick={() => {
             push("/services");
           }}
@@ -67,7 +67,7 @@ export default function ServicesSection() {
           VIEW ALL SERVICES
         </p>
 
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-8">
           {serviceCardsTexts.map((element, index) =>
             serviceCard(
               element.id,
@@ -79,7 +79,7 @@ export default function ServicesSection() {
           )}
         </div>
       </div>
-      <div id="services-section-mobile" className="flex flex-col sm:hidden dark:text-black bg-white flex items-center justify-center pt-24 py-12 px-5">
+      <div id="services-section-mobile" className="flex flex-col lg:hidden dark:text-black bg-white flex items-center justify-center pt-24 py-12 px-5">
         <p className="text-2xl font-bold mb-4">OUR SERVICES</p>
         <p
           className="mb-4 text-center px-[1rem] text-md underline font-medium hover:font-bold hover:cursor-pointer hover:text-red-500"
